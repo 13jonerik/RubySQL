@@ -2,12 +2,17 @@
 
 require 'pg'
 begin
+
+	#Hide Password
+	file = File.open("../Desktop/password.rb", "rb")
+	pword = file.read.chomp
+
 	#create our db connection
 	connect = PGconn.connect(
 		:host => "dbclass.cs.pdx.edu",
 		:dbname => "f15ddb41",
 		:user => "f15ddb41",
-		:password => "*")
+		:password => pword)
 
 	#… do stuff on next slide …
 
